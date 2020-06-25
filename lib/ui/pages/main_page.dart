@@ -127,8 +127,8 @@ class MainPage extends StatelessWidget {
               child: RaisedButton(
                 elevation: 0,
                 onPressed: () async {
-                  await AuthServices.signOut();
                   context.bloc<UserBloc>().add(SignOut());
+                  await AuthServices.signOut();
                 },
                 child: Text('Log Out'),
               ),
