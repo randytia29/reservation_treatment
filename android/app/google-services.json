@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "125521207242",
+    "firebase_url": "https://reservation-treatment.firebaseio.com",
+    "project_id": "reservation-treatment",
+    "storage_bucket": "reservation-treatment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125521207242:android:74fd650764472e5d6ff933",
+        "android_client_info": {
+          "package_name": "com.example.reservationtreatment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125521207242-tsklkqkoiev3ec4gmvi02g8qfrk2b4nl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCna9KIMPZ-mOY9y-8MhlxyZd_YZAgJsmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125521207242-tsklkqkoiev3ec4gmvi02g8qfrk2b4nl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
