@@ -9,7 +9,8 @@ part 'product_state.dart';
 part 'product_event.dart';
 
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
-  @override
+  ProductBloc(ProductState initialState) : super(initialState);
+
   ProductState get initialState => ProductInitial();
 
   @override

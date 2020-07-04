@@ -6,7 +6,8 @@ import 'package:reservationtreatment/models/models.dart';
 import 'package:reservationtreatment/services/services.dart';
 
 class TicketBloc extends Bloc<TicketEvent, TicketState> {
-  @override
+  TicketBloc(TicketState initialState) : super(initialState);
+
   TicketState get initialState => TicketState([]);
 
   @override

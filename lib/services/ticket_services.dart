@@ -24,7 +24,8 @@ class TicketServices {
     for (var document in documents) {
       ProductDetail productDetail = await ProductServices.getDetails(null,
           productID: document.data['productID']);
-      tickets.add(Ticket(product: productDetail));
+      tickets
+          .add(Ticket(product: productDetail, jumlah: document.data['jumlah']));
     }
     return tickets;
   }
