@@ -39,6 +39,10 @@ class TicketCard extends StatelessWidget {
               Text(
                 ticket.product.price,
                 style: TextStyle(fontSize: 14),
+              ),
+              Text(
+                'Jumlah pesanan: ${ticket.jumlah}',
+                style: TextStyle(fontSize: 14),
               )
             ],
           )

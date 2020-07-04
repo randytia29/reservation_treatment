@@ -23,6 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flushbar: ^1.10.4
+  email_validator: ^1.0.4
 
 
   # The following adds the Cupertino Icons font to your application.

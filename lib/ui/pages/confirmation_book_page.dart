@@ -18,9 +18,13 @@ class ConfirmationBookPage extends StatelessWidget {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Sudah yakin memesan?\n${(userState as UserLoaded).user.name}',
-                    textAlign: TextAlign.center,
+                  Text('Jumlah pesanan: ${ticket.jumlah}'),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Text(
+                      'Sudah yakin memesan?\n${(userState as UserLoaded).user.name}',
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10),

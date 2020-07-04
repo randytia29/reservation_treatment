@@ -1,10 +1,16 @@
 part of 'pages.dart';
 
-class ProductDetailPage extends StatelessWidget {
+class ProductDetailPage extends StatefulWidget {
   final Product product;
 
   ProductDetailPage(this.product);
 
+  @override
+  _ProductDetailPageState createState() => _ProductDetailPageState();
+}
+
+class _ProductDetailPageState extends State<ProductDetailPage> {
+  TextEditingController jumlahController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     ProductDetail productDetail;
@@ -15,7 +21,7 @@ class ProductDetailPage extends StatelessWidget {
       },
       child: Scaffold(
         body: FutureBuilder(
-          future: ProductServices.getDetails(product),
+          future: ProductServices.getDetails(widget.product),
           builder: (_, snapshot) {
             if (snapshot.hasData) {
               productDetail = snapshot.data;
@@ -44,6 +50,25 @@ class ProductDetailPage extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 10),
+                      child: Row(
+                        children: [
+                          Text('Jumlah : '),
+                          SizedBox(
+                            width: 50,
+                            height: 50,
+                            child: TextField(
+                              keyboardType: TextInputType.number,
+                              controller: jumlahController,
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(8))),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
                       child: BlocBuilder<UserBloc, UserState>(
                         builder: (_, userState) {
                           if (userState is UserLoaded) {
@@ -53,7 +78,8 @@ class ProductDetailPage extends StatelessWidget {
                                   context.bloc<PageBloc>().add(
                                       GoToConfirmationBookPage(Ticket(
                                           product: productDetail,
-                                          name: userState.user.name)));
+                                          name: userState.user.name,
+                                          jumlah: jumlahController.text)));
                                 });
                           } else {
                             return SizedBox();

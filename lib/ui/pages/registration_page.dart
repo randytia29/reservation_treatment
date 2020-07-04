@@ -92,11 +92,39 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         borderRadius: BorderRadius.circular(5)),
                     child: Text('Register'),
                     onPressed: () async {
-                      await AuthServices.signUp(
-                          emailController.text,
-                          passwordController.text,
-                          nameController.text,
-                          phoneController.text);
+                      if (!(emailController.text.trim() != '' &&
+                          passwordController.text.trim() != '' &&
+                          nameController.text.trim() != '' &&
+                          phoneController.text.trim() != '')) {
+                        Flushbar(
+                          duration: Duration(seconds: 3),
+                          flushbarPosition: FlushbarPosition.TOP,
+                          backgroundColor: Color(0xFFFF5C83),
+                          message: 'Harap diisi semua',
+                        )..show(context);
+                      } else if (!EmailValidator.validate(
+                          emailController.text)) {
+                        Flushbar(
+                          duration: Duration(seconds: 3),
+                          flushbarPosition: FlushbarPosition.TOP,
+                          backgroundColor: Color(0xFFFF5C83),
+                          message: 'Format email tidak sesuai',
+                        )..show(context);
+                      } else {
+                        SignUpSignInResult result = await AuthServices.signUp(
+                            emailController.text,
+                            passwordController.text,
+                            nameController.text,
+                            phoneController.text);
+                        if (result == null) {
+                          Flushbar(
+                            duration: Duration(seconds: 3),
+                            flushbarPosition: FlushbarPosition.TOP,
+                            backgroundColor: Color(0xFFFF5C83),
+                            message: result.message,
+                          )..show(context);
+                        }
+                      }
                     })
               ],
             ),

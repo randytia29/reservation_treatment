@@ -12,7 +12,7 @@ class TicketPage extends StatelessWidget {
         body: Container(
           child: Padding(
             padding: const EdgeInsets.only(top: 30, left: 24, right: 24),
-            child: Column(
+            child: ListView(
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 10),

@@ -11,7 +11,8 @@ class TicketServices {
       'name': ticket.name,
       'productName': ticket.product.name,
       'price': ticket.product.price,
-      'image': ticket.product.image
+      'image': ticket.product.image,
+      'jumlah': ticket.jumlah
     });
   }
 
