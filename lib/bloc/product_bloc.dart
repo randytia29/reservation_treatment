@@ -9,9 +9,7 @@ part 'product_state.dart';
 part 'product_event.dart';
 
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
-  ProductBloc(ProductState initialState) : super(initialState);
-
-  ProductState get initialState => ProductInitial();
+  ProductBloc() : super(ProductInitial());
 
   @override
   Stream<ProductState> mapEventToState(

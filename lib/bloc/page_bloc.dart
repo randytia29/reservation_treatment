@@ -8,9 +8,7 @@ part 'page_state.dart';
 part 'page_event.dart';
 
 class PageBloc extends Bloc<PageEvent, PageState> {
-  PageBloc(PageState initialState) : super(initialState);
-
-  PageState get initialState => OnInitialPage();
+  PageBloc() : super(OnInitialPage());
 
   @override
   Stream<PageState> mapEventToState(
