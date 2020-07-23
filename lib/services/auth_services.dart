@@ -13,7 +13,7 @@ class AuthServices {
       await UserServices.updateUser(user);
       return SignUpSignInResult(user: user);
     } catch (e) {
-      return null;
+      return SignUpSignInResult(message: e.toString());
     }
   }
 
